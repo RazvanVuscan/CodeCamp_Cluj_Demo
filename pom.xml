@@ -17,6 +17,7 @@
         <guava.version>21.0</guava.version>
         <reflections.version>0.9.10</reflections.version>
         <joda-time.version>2.9.6</joda-time.version>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
     <build>
