@@ -1,0 +1,40 @@
+seleniumhub:
+  image: selenium/hub:3.0.1
+  restart: always
+  tty: true
+  ports:
+    - 4444:4444
+  privileged: true
+  stdin_open: true
+  environment:
+    - JAVA_OPTS=-Xmx1024m
+    - GRID_BROWSER_TIMEOUT=120000
+    - GRID_TIMEOUT=120000
+    - GRID_NEW_SESSION_WAIT_TIMEOUT=-1
+    - GRID_CLEAN_UP_CYCLE=5000
+    - GRID_JETTY_MAX_THREADS=2048
+    - GRID_MAX_SESSION=10
+
+firefoxnode:
+  image: selenium/node-firefox:3.0.1
+  ports:
+    - 5900
+  restart: always
+  tty: true
+  privileged: true
+  stdin_open: true
+  links:
+    - seleniumhub:hub
+
+chromenode:
+  image: selenium/node-chrome:3.0.1
+  ports:
+    - 5900
+  restart: always
+  tty: true
+  privileged: true
+  stdin_open: true
+  links:
+    - seleniumhub:hub
+  volumes:
+    - /dev/shm:/dev/shm
