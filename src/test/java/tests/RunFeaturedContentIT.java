@@ -14,6 +14,6 @@ import cucumber.api.junit.Cucumber;
         features = "src/test/resources/featuredContentTests",
         plugin = {"pretty", "html:target/cucumberTestReport", "json:target/cucumberTestReport/RunFeaturedContentTest.json"},
         glue = {"steps"},
-        tags = {"@Chrome, @Firefox"})
+        tags = {"@Chrome or @Firefox"})
 public class RunFeaturedContentIT {
 }

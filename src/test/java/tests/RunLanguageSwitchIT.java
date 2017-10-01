@@ -14,6 +14,6 @@ import cucumber.api.junit.Cucumber;
         features = "src/test/resources/switchLanguageTests",
         plugin = {"pretty", "html:target/cucumberTestReport", "json:target/cucumberTestReport/RunLanguageSwitchTest.json"},
         glue = {"steps"},
-        tags = {"@Chrome, @Firefox"})
+        tags = {"@Chrome or @Firefox"})
 public class RunLanguageSwitchIT {
 }

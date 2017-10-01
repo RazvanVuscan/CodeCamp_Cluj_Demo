@@ -44,7 +44,7 @@ public class TestSetup {
 
         }
 
-        System.out.println("Scenario: " + scenario.getName() + " ------ " + scenario.getStatus().toUpperCase() + "\n");
+        System.out.println("Scenario: " + scenario.getName() + " ------ " + scenario.getStatus() + "\n");
     }
 }
 

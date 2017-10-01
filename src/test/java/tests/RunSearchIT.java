@@ -14,8 +14,7 @@ import cucumber.api.junit.Cucumber;
         features = "src/test/resources/searchTests",
         plugin = {"pretty", "html:target/cucumberTestReport", "json:target/cucumberTestReport/ChromeSearchTest.json"},
         glue = {"steps"},
-        tags = {"@Chrome, @Firefox"})
-
+        tags = {"@Chrome or @Firefox"})
 public class RunSearchIT {
 
 }

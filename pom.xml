@@ -11,7 +11,7 @@
     <properties>
         <mavenSurefire.version>2.19.1</mavenSurefire.version>
         <selenium.version>3.1.0</selenium.version>
-        <cucumber.version>1.2.5</cucumber.version>
+        <cucumber.version>2.0.1</cucumber.version>
         <junit.version>4.12</junit.version>
         <log4j.version>2.8.1</log4j.version>
         <guava.version>21.0</guava.version>
@@ -109,16 +109,17 @@
         </dependency>
 
         <dependency>
-            <groupId>info.cukes</groupId>
+            <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
             <version>${cucumber.version}</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
-            <groupId>info.cukes</groupId>
+            <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
             <version>${cucumber.version}</version>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
