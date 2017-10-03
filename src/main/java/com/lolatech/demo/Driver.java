@@ -16,6 +16,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -97,10 +98,14 @@ public class Driver {
 
         System.setProperty("webdriver.chrome.driver", chromeDriverLocation);
 
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("disable-infobars");
+
         DesiredCapabilities chromeCapabilities = DesiredCapabilities.chrome();
         chromeCapabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
         chromeCapabilities.setCapability(CapabilityType.HAS_NATIVE_EVENTS, true);
         chromeCapabilities.setCapability(CapabilityType.SUPPORTS_ALERTS, true);
+        chromeCapabilities.setCapability(ChromeOptions.CAPABILITY, options);
 
         return new RemoteWebDriver(new URL(dockerUrl), chromeCapabilities);
     }
